@@ -1,35 +1,25 @@
-const pokemons = [
-  {
-    id: 1,
-    name: "bulbasaur",
-    img: "https://static.wikia.nocookie.net/kingdom-keymasters-database/images/2/27/001Bulbasaur_XY_anime.png/revision/latest?cb=20160927122032",
-    likes: 4,
-  },
-  {
-    id: 2,
-    name: "ivysaur",
-    img: "https://static.wikia.nocookie.net/kingdom-keymasters-database/images/c/ca/002Ivysaur_XY_anime_2.png/revision/latest?cb=20161017212021",
-    likes: 21,
-  },
-  {
-    id: 3,
-    name: "venusaur",
-    img: "https://images.saymedia-content.com/.image/t_share/MTc2MjYwODQ5NTk2NTcyODYy/pokemon-venusaur-nicknames.png",
-    likes: 7,
-  },
-  {
-    id: 4,
-    name: "charmander",
-    img: "https://pixy.org/download/1207107/",
-    likes: 20,
-  },
-  {
-    id: 5,
-    name: "charmeleon",
-    img: "https://static.wikia.nocookie.net/pokemon-quest-adventures/images/a/a4/005Charmeleon_XY_anime_2.png/revision/latest?cb=20170313041459",
-    likes: 11,
-  },
-];
+
+//what is fetch?
+//a simpler easy to use method for consuming asyncronouslu from a 3rd api
+//also allows us to push and pull data from a server
+//asynchronous 
+//its just a method, ran on the windo which means it doesnt need to be called on anythign else
+
+//how to use fetch
+// fetch(endpoint, [options]***)
+//     //*you dont always need to provide options
+//     //gives a promises - like a reciept for your fetch transaction
+//     //call .then() on the promise
+// .then() //first then - do something with this promise // returns another promise
+// .then() // second then - do something with the received data(promise)
+
+//Default behavior of FETCH
+//defaults to making a GET request
+//use optiion to make another kind of request OTHER THAN GET
+
+//promise - IOU from the server, and object
+//has 3 different statuses: pending, fulfilled, or rejected
+
 
 const pokeContainer = document.getElementById("poke-container");
 const pokeForm = document.getElementById("poke-form");
@@ -91,11 +81,44 @@ function deletePoke(card) {
   card.remove();
 }
 
+//function to get pokemon from the server
+//THIS IS THE R IN CRUD - RETREIVING RESOURCES
+function getPokemons(){
+  //making get request to endpoint for the okject
+  fetch('  http://localhost:3000/pokemons')
+  //returns a promise
+  //take promise and turn into json
+  //MOST OF THE TIME first .then will be to take data and json-ify it
+  //.then implicitly drops in response(promise object) to callback function
+  .then(function(resp){
+    return resp.json()
+  }) //return another promise
+  .then(function(pokemonsArray){
+    //do something with pokemonsArray
+    //this second .then is SPECIFIC to your application design
+    pokemonsArray.forEach(function(pokemon){
+      renderPokemon(pokemon)
+    })
+  })
+}
+//**making request to server for array and then iterationg over that array */
+
+
 function init() {
-  pokemons.forEach(function (pokemon) {
-    renderPokemon(pokemon);
-  });
+  // pokemons.forEach(function(pokemon) {
+  //   renderPokemon(pokemon);
+  // });
+  //replacing above code ^ with the getPokemons() function
+  getPokemons()
   pokeForm.addEventListener("submit", createPokemon);
 }
 
 init();
+
+//code along - 
+
+function getChickens() {
+  fetch('https://www.themealdb.com/api/json/v1/1/search.php?s=chicken')
+  .then(response) => {return response.json()}
+  .then((data) => )
+}
