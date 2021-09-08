@@ -115,10 +115,3 @@ function init() {
 
 init();
 
-//code along - 
-
-function getChickens() {
-  fetch('https://www.themealdb.com/api/json/v1/1/search.php?s=chicken')
-  .then(response) => {return response.json()}
-  .then((data) => )
-}
