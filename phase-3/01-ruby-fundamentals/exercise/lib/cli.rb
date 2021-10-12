@@ -26,9 +26,11 @@ def menu_selection
   until selection == "exit"
     if selection == "1"
       create_pizza
-    end
-      if delection == "2"
+
+    elsif selection == "2"
         created_pizzas
+    else
+      puts "try again"
       end
       menu_options
       selection = gets.strip
@@ -46,12 +48,13 @@ def create_pizza
   # need to return a pizza hash
   pizza ={
   name: name, 
-  topping: topping, 
+  toppings: toppings, 
   desc: desc
   }
   PIZZAS << pizza
 
   pizza
+  puts "pizza successful"
 
 end 
 
