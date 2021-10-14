@@ -1,4 +1,5 @@
 PIZZAS = [] 
+
 def init
   puts "Welcome to the lean, mean Pizza Machine App!"
   puts "Tell us your name: "
@@ -67,3 +68,4 @@ end
 def goodbye
   puts "Come back when you get hungry!!!"
 end 
+
