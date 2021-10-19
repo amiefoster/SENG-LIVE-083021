@@ -2,10 +2,18 @@ source "https://rubygems.org"
 
 # Specify your gem's dependencies in ruby_fundamentals.gemspec
 
+<<<<<<< HEAD
 gem "rake"
+=======
+gem "rake" # going to allow us to create and use rake tasks
+>>>>>>> b7a4eb3bc5dc35c01f059ec41a0bcb865fcdcc18
 gem "rspec"
 gem "require_all"
 gem "pry"
 gem 'sqlite3'
 gem 'activerecord'
+<<<<<<< HEAD
 gem 'sinatra-activerecord'
+=======
+gem 'sinatra-activerecord' # essential to our rake tasks 
+>>>>>>> b7a4eb3bc5dc35c01f059ec41a0bcb865fcdcc18

@@ -155,5 +155,11 @@ Donation.create(amount: 20.00, date: 10/01/21, completed: false)
 8. Create a new donation using the new method. Don't forget to persist this record
 9. Create a new organizating using the create method. What is the difference between the new and create method?
 10. Create a method that will return the total of all donations. 
+<<<<<<< HEAD
+=======
+- sum method for the total***
+- donation model 
+
+>>>>>>> b7a4eb3bc5dc35c01f059ec41a0bcb865fcdcc18
 11. Create a method that will toggle a donations completed status.
 12. Create a method that will sort the list of existing organizations in alphabetical order.

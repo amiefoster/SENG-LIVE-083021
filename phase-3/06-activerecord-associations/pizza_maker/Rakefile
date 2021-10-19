@@ -8,12 +8,4 @@ task :console do
   
   # Open a Pry session
   Pry.start
-<<<<<<< HEAD
 end
-=======
-end
-
-# task :hello_world do 
-#   puts "Hello World"
-# end
->>>>>>> b7a4eb3bc5dc35c01f059ec41a0bcb865fcdcc18
