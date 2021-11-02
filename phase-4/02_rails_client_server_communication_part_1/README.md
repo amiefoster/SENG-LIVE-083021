@@ -141,6 +141,14 @@ You will sometimes see controllers use `.new` and then `.save` instead of `.crea
 
 ![mvc flow with validation using new and save](../assets/mvc-flow-with-validations.png)
 
+The curriculum also shows how to use begin/rescue syntax to handle validation logic in the controller
+
+![mvc flow with validation and begin/rescue](../assets/mvc-flow-with-validations-create-and-rescue.png)
+
+When you get to this portion, know that we're showing this mainly so you're familiar with the syntax for handling exceptions in Ruby. If you'd prefer to use either of the above 2 options instead, that's perfectly fine for use in the controller.
+
+Custom exception handling becomes a better choice when you're doing something more complicated where multiple exceptions are possible and need to be handled differently. In a controller action, validation error is virtually the only thing that could go wrong, so handling it with simple conditional logic is more common.
+
 ## Users must provide a unique name when creating a group
 
 ### Request
